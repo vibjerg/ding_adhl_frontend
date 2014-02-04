@@ -138,7 +138,7 @@ function ding_adhl_frontend_get_recommended_objects($objects, $reset = FALSE) {
       $number_of_objects = variable_get('ding_adhl_frontend_number_to_display', 10);
       $agency = variable_get('ting_agency', -1);
       foreach (array_keys($local_ids) as $local_id) {
-        $ting_object = ding_entity_load("$agency:$local_id");
+        $ting_object = ding_entity_load(ding_provider_build_entity_id($local_id));
 
         // Only show objects belonging to our own library.
         if ($ting_object && $ting_object->ownerId == $agency) {
@@ -166,7 +166,7 @@ function ding_adhl_frontend_get_recommended_objects($objects, $reset = FALSE) {
  * @todo: There most be a more clean way to get these ids -- cableman.
  *
  * @param mixed $objects
- *  The parameter can be anything from an array to ting object collections.
+ *   The parameter can be anything from an array to ting object collections.
  */
 function ding_adhl_frontend_extract_identifers($objects) {
   if (is_array($objects)) {
