@@ -47,7 +47,7 @@ function ding_adhl_frontend_recommendation_list_content_type_content_types() {
  */
 function ding_adhl_frontend_recommendation_list_content_type_render($subtype, $conf, $panel_args, $contexts) {
   // Get the objects to base the recommendation on based on the first supplied
-  // context
+  // context.
   $object = FALSE;
   foreach ($contexts as $context) {
     $ting_object_id = $context->get_original_argument()->getId();
