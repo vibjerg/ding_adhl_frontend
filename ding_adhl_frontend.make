@@ -4,7 +4,7 @@ core = 7.x
 ; Contrib
 
 projects[panels][subdir] = "contrib"
-projects[panels][version] = "3.3"
+projects[panels][version] = "3.4"
 projects[panels][patch][] =  "http://drupal.org/files/1649046-form-wrapper-is-where-form-is-now.patch"
 
 ; Ding! modules
