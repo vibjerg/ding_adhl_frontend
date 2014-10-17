@@ -62,13 +62,13 @@ function ding_adhl_frontend_recommendation_list_content_type_render($subtype, $c
     }
   }
 
-  // Build the block, if then context was present.
+  // Build the block, if the context was present.
   $block = new stdClass();
   if ($object) {
-    // Get recommandations based on the current object.
+    // Get recommendations based on the current object.
     $entities = ding_adhl_frontend_get_recommended_objects($object);
 
-    // Build render array with the recommandations found.
+    // Build render array with the recommendations found.
     $items = array();
     foreach ($entities as $entity) {
       $items[] = array(
@@ -109,6 +109,7 @@ function ding_adhl_frontend_recommendation_list_content_type_admin_title($subtyp
 
 /**
  * Returns an edit form for the content type.
+ * @REVIEW: Returnerer dette ikke blot en tom form?
  */
 function ding_adhl_frontend_recommendation_list_content_type_edit_form($form, &$form_state) {
   return $form;

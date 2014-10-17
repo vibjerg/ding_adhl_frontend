@@ -46,7 +46,7 @@ function ding_adhl_frontend_settings_form($form, $form_state) {
     '#default_value' => variable_get('ding_adhl_frontend_number_to_display', 10),
   );
 
-  $service_link = l('ting service settings', 'admin/config/ting/settings');
+  $service_link = l(t('ting service settings'), 'admin/config/ting/settings');
   $form['information'] = array(
     '#markup' => t('If you are looking for the service configuration see !link, which currently points to %service', array(
       '!link' => $service_link,

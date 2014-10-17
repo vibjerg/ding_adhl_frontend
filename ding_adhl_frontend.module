@@ -1,5 +1,15 @@
 <?php
 /**
+ * @REVIEW_COMMENT: Dette modul ville gavne af at blive omskrevet til adhl 3.0.
+ * Til denne version af servicen skal man sende en pid og man får en række pid'er retur
+ * som kan hentes med object get.
+ * Det vil give en simplere kode, og et stort performance boost
+ *
+ * Der er et par "@todo" kommentarer i koden, bør de ikke fixes/fjernes inden det kommer i
+ * core
+ */
+
+/**
  * @file
  * Enables the ADHL services to ding2 sites.
  */
@@ -51,7 +61,7 @@ function ding_adhl_frontend_theme() {
 }
 
 /**
- * Implements hook_preprocess().
+ * Implements hook_preprocess_HOOK().
  *
  * Default implementation of preprocess function for ding_adhl_frontend_recommendation_list_entry
  * theme function.
@@ -100,7 +110,7 @@ function ding_adhl_frontend_ctools_plugin_directory($module, $plugin) {
  * @param bool $reset
  *  Reset the cache. Defaults to FALSE.
  * @return ting_entities
- *  An array of recommendataions as ting entities.
+ *  An array of recommendations as ting entities.
  */
 function ding_adhl_frontend_get_recommended_objects($objects, $reset = FALSE) {
   // Check static cache for recommendations.
@@ -135,6 +145,7 @@ function ding_adhl_frontend_get_recommended_objects($objects, $reset = FALSE) {
 
       // Fetch objects/entities representing the recommendations.
       $recommended_objects = array();
+      // Hvorfor hente et andet antal objecter end man skal bruge $number_of_recommendations vs. $number_of_objects
       $number_of_objects = variable_get('ding_adhl_frontend_number_to_display', 10);
       $agency = variable_get('ting_agency', -1);
       foreach (array_keys($local_ids) as $local_id) {

@@ -5,3 +5,4 @@ core = 7.x
 configure = 'admin/config/ding/adhl'
 dependencies[] = panels
 dependencies[] = ting
+version="?"

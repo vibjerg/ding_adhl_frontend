@@ -8,7 +8,7 @@
  * - $creators: The creators of the recommandation as a comman sperated list or
  *   FALSE if no creators where found.
  * - $link: Array with an uri and link title for the recommand Ting entity.
- * - $item: Ting enity with all information available about the recommandated
+ * - $item: Ting entity with all information available about the recommended
  *   object.
  * - $zebra: The even/odd class.
  *
